@@ -24,7 +24,17 @@ class Student{
     }
 
     //copy constructor
-    
+    Student(const Student &srcobj){
+        cout<<"Copy Constructor is called"<<endl;
+        //this points to current Object C 
+        // srcobj is Object A
+        this->name = srcobj.name;
+        this->age = srcobj.age;
+        this->rollno = srcobj.rollno;
+        this->gender = srcobj.gender;
+    }
+
+
 
     void study(){
         cout<<this->name<<" is studying"<<endl;
@@ -52,5 +62,10 @@ int main(){
 
     Student C("Neha", 22, 108, 'F');
     C.sleep();
+
+    //using copy constructor
+    Student D = B;
+    cout<<D.name<<" "<<B.name<<endl;
+
     return 0;
 }
